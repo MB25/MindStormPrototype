@@ -5,7 +5,10 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-
+/**
+ * Deals with getting Data from our python Script (which reads input from the Arduino)
+ * 
+**/
 public class MainServer {
 	public static void main(String[] args) throws Exception	{
 		
@@ -32,6 +35,12 @@ public class MainServer {
 		  //source: https://systembash.com/a-simple-java-tcp-server-and-tcp-client/
 		  
 		}
+	
+	/**
+	 * For converting received string to an array
+	 * @param recStr = The String received 
+	 * @return integer array with extracted values
+	 */
 	private static int[] decodeReceivedString(String recStr){
 		int[] arr = new int[5];
 		int idx = 0;
