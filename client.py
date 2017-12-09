@@ -50,14 +50,14 @@ def getDataFromInput():
     print(inputString)
 
     if(inputString == "1"):
-        helpArr = [random.randint(100,254), 0, 0, 0, 0]
+        helpArr = [random.randint(150,254), 0, 0, 0, 0]
     if(inputString == "2"):
-        helpArr = [0, random.randint(100, 254), random.randint(100, 254), 0, 0]
+        helpArr = [0, random.randint(100, 254), random.randint(150, 254), 0, 0]
     if (inputString == "3"):
-        helpArr = [0,0, 0, 0, random.randint(100,254)]
+        helpArr = [0,0, 0, 0, random.randint(150,254)]
     if (inputString == "4"):
-        helpArr = [random.randint(100,254), random.randint(100,254), random.randint(100,254),
-                     random.randint(100,254), random.randint(100,254)]
+        helpArr = [random.randint(150,254), random.randint(150,254), random.randint(150,254),
+                     random.randint(150,254), random.randint(150,254)]
 
     counter = 0;
     for i in range(0, 5):
@@ -73,7 +73,11 @@ mode = input("(t)est or (r)andom mode?")
 host = '127.0.0.1'
 while (1):
     port = 6789
-    BUFFER_SIZE = 2048
+    BUFFER_SIZE = 512
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    print("attempting to connect")
+
+    s.connect((host, port))
 
     if(mode == 'r'):
         bytes = getRandomData(oldArray)
@@ -82,10 +86,7 @@ while (1):
 
     print(bytes)
 
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    print("attempting to connect")
 
-    s.connect((host, port))
     s.sendall(str.encode(bytes))
     print("Sending data")
     sleep(1)
