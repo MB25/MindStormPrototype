@@ -14,14 +14,15 @@ def getRandomData():
     randomSentence = ""
     for i in range(0,5): #5*jeweils 8 randombits
         randomSentence += int.__str__(random.getrandbits(8)) + ","
-    return randomSentence[: len(randomSentence)-1]
+
+    return randomSentence
 
 
 
 host = '127.0.0.1'
 while (1):
     port = 6789
-    BUFFER_SIZE = 4096
+    BUFFER_SIZE = 2048
     bytes = getRandomData()
     print(bytes)
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
