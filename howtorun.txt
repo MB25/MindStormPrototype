@@ -1,0 +1,7 @@
+1. Server starten (Am besten das Javaprojekt einfach in Eclipse importieren und da ausführen)
+2. client.py ausführen (Über IDE oder terminal mit python client.py)
+3. t drücken beim start vom script und mit 1-4 ne Geste wählen 
+4. Nun wird dem Server ein int Array geschickt mit den relevanten Werten (Finger die nicht zu einer Geste
+gehören = 0) und die sind eben dementsprechend gewichtet (mehr = stärker)
+5. Mit dieser Info entscheidet der Server welche Geste gewählt wurde. 
+
