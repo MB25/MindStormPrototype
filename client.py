@@ -12,7 +12,7 @@ cgitb.enable() #for debugging
 
 def getRandomData():
     randomSentence = ""
-    for i in range(0,5):
+    for i in range(0,5): #5*jeweils 8 randombits
         randomSentence += int.__str__(random.getrandbits(8)) + ","
     return randomSentence[: len(randomSentence)-1]
 
